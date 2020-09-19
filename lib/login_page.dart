@@ -116,27 +116,54 @@ class _LoginPageState extends State<LoginPage> {
                   SizedBox(height: 20,),
                   FadeAnimation(1.5, Center(child: Text("Forgot Password?", style: TextStyle(fontSize:15,color: Color(0xFFF52323)),))),
                   SizedBox(height: 20,),
-                  FadeAnimation(1.6, Container(
-                    height: 40,
-                    //width: 10000,
-                    margin: EdgeInsets.symmetric(horizontal: 60),
-                    decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                          colors: [Color(0xFFE53033),Color(0xFFFF2E2E) ],
-                          begin: const FractionalOffset(0.5, 0.0),
-                          end: const FractionalOffset(0.0, 0.5),
-                          stops: [0.0, 1.0],
-                          tileMode: TileMode.clamp
+                  GestureDetector(
+                    onTap: (){
+
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return LoginPage();
+                          },
+                        ),
+                      );
+
+                    },
+                    child: FadeAnimation(1.6, Container(
+                      height: 40,
+                      //width: 10000,
+                      margin: EdgeInsets.symmetric(horizontal: 60),
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                            colors: [Color(0xFFE53033),Color(0xFFFF2E2E) ],
+                            begin: const FractionalOffset(0.5, 0.0),
+                            end: const FractionalOffset(0.0, 0.5),
+                            stops: [0.0, 1.0],
+                            tileMode: TileMode.clamp
+                        ),
+                        borderRadius: BorderRadius.circular(50),
+                        color: Color.fromRGBO(49, 39, 79, 1),
                       ),
-                      borderRadius: BorderRadius.circular(50),
-                      color: Color.fromRGBO(49, 39, 79, 1),
-                    ),
-                    child: Center(
-                      child: Text("Login", style: TextStyle(color: Colors.white),),
-                    ),
-                  )),
+                      child: Center(
+                        child: Text("Login", style: TextStyle(color: Colors.white),),
+                      ),
+                    )),
+                  ),
                   SizedBox(height: 20,),
-                  FadeAnimation(1.7, Center(child: Text("Dont have an account? Sign up", style: TextStyle(fontSize:15,color: Colors.black),))),
+                  GestureDetector(
+                      onTap: (){
+
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) {
+                              return LoginPage();
+                            },
+                          ),
+                        );
+
+                      },
+                      child: FadeAnimation(1.7, Center(child: Text("Dont have an account? Sign up", style: TextStyle(fontSize:15,color: Colors.black),)))),
                 ],
               ),
             )
