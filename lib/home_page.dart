@@ -1,15 +1,17 @@
 import 'dart:ui';
-
+import 'Request.dart';
 import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 
 import 'package:custom_navigation_bar/custom_navigation_bar.dart';
+import 'package:redlink/Request.dart';
 class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
+
   int _currentIndex = 0;
   @override
   Widget build(BuildContext context) {
@@ -90,7 +92,12 @@ class _HomePageState extends State<HomePage> {
              child: Column(
                crossAxisAlignment: CrossAxisAlignment.start,
                children: <Widget>[
+                 Row(
+                   children: <Widget>[
                  Text('Select Location',style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold,color: Color(0xFFBC002D),fontFamily: 'Montserrat'),),
+                     Icon(Icons.navigation,color: Color(0xFFBC002D),)
+                   ],
+                 ),
                  Container(
                    width: 200,
                   // padding: EdgeInsets.all(5),
@@ -133,6 +140,13 @@ class _HomePageState extends State<HomePage> {
                            offset: Offset(0, 10),
                          )
                        ]
+                   ),
+                   child: Column(
+                     children: <Widget>[
+
+
+
+                     ],
                    ),
                  ),
                  SizedBox(height: 10,),
@@ -195,10 +209,18 @@ class _HomePageState extends State<HomePage> {
         onTap: (index) {
           if(index==1)
             {
-
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return Request();
+                  },
+                ),
+              );
             }
           else if(index==2)
             {
+
 
             }
           else
