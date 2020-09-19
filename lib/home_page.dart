@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 
@@ -15,6 +17,7 @@ class _HomePageState extends State<HomePage> {
       backgroundColor: Color(0xffffffff),
       body:SingleChildScrollView(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             SizedBox(height: 25,),
             Padding(
@@ -46,7 +49,7 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(top:20.0,right: 20,left:20),
+              padding: const EdgeInsets.only(top:20.0,right: 20,left:20,bottom: 5),
               child: Container(
                 height:170,
                 width: double.infinity,
@@ -81,16 +84,16 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
             ),
+           SizedBox(height: 20,),
            Padding(
-             padding: const EdgeInsets.symmetric(horizontal:0.0),
+             padding: const EdgeInsets.symmetric(horizontal:25.0),
              child: Column(
                crossAxisAlignment: CrossAxisAlignment.start,
                children: <Widget>[
-                 Text('Select Location',style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold,fontFamily: 'Montserrat'),),
+                 Text('Select Location',style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold,color: Color(0xFFBC002D),fontFamily: 'Montserrat'),),
                  Container(
                    width: 200,
-
-                   padding: EdgeInsets.all(10),
+                  // padding: EdgeInsets.all(5),
                    decoration: BoxDecoration(
                        border: Border(bottom: BorderSide(
                            color: Colors.grey[200]
@@ -99,11 +102,80 @@ class _HomePageState extends State<HomePage> {
                    child: TextField(
                      decoration: InputDecoration(
                          border: InputBorder.none,
-                         hintText: "Username",
+                         hintText: "City name",
                          hintStyle: TextStyle(color: Colors.grey)
                      ),
                    ),
                  ),
+                 SizedBox(height: 20,),
+                 Row(
+                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                   children: <Widget>[
+                     Text('Emergencies Near me',style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold,fontFamily: 'Montserrat'),),
+                     Text('view all',style: TextStyle(fontSize: 14,fontWeight: FontWeight.bold,fontFamily: 'Montserrat'),),
+                   ],
+                 ),
+                 SizedBox(height: 20,),
+                 Container(
+                   height:100,
+                   width: double.infinity,
+                   decoration: BoxDecoration(
+                       gradient: LinearGradient(
+                           colors: [Color(0xFFffffff),Color(0xFFFfffff), ],
+                           tileMode: TileMode.clamp
+                       ),
+                       borderRadius: BorderRadius.circular(15),
+                       color: Color.fromRGBO(49, 39, 79, 1),
+                       boxShadow: [
+                         BoxShadow(
+                           color: Color(0x30bc002d),
+                           blurRadius: 5,
+                           offset: Offset(0, 10),
+                         )
+                       ]
+                   ),
+                 ),
+                 SizedBox(height: 10,),
+                 Container(
+                   height:100,
+                   width: double.infinity,
+                   decoration: BoxDecoration(
+                       gradient: LinearGradient(
+                           colors: [Color(0xFFffffff),Color(0xFFffffff), ],
+                           tileMode: TileMode.clamp
+                       ),
+                       borderRadius: BorderRadius.circular(15),
+                       color: Color.fromRGBO(49, 39, 79, 1),
+                       boxShadow: [
+                         BoxShadow(
+                           color: Color(0x30bc002d),
+                           blurRadius: 5,
+                           offset: Offset(0, 10),
+                         )
+                       ]
+                   ),
+                 ),
+                 SizedBox(height: 10,),
+                 Container(
+                   height:100,
+                   width: double.infinity,
+                   decoration: BoxDecoration(
+                       gradient: LinearGradient(
+                           colors: [Color(0xFFffffff),Color(0xFfffffff), ],
+                           tileMode: TileMode.clamp
+                       ),
+                       borderRadius: BorderRadius.circular(15),
+                       color: Color.fromRGBO(49, 39, 79, 1),
+                       boxShadow: [
+                         BoxShadow(
+                           color: Color(0x30bc002d),
+                           blurRadius: 5,
+                           offset: Offset(0, 10),
+                         )
+                       ]
+                   ),
+                 ),
+                 SizedBox(height: 10,),
                ],
              ),
            )
