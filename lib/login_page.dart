@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:redlink/home_page.dart';
+import 'package:redlink/page_guide.dart';
 import 'fade_animation.dart';
 
 
@@ -125,7 +126,7 @@ class _LoginPageState extends State<LoginPage> {
                         context,
                         MaterialPageRoute(
                           builder: (context) {
-                            return HomePage();
+                            return PageGuide();
                           },
                         ),
                       );

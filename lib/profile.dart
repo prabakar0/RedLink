@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:redlink/compatability.dart';
+import 'package:redlink/home_page.dart';
 import 'constants.dart';
 import 'package:clay_containers/clay_containers.dart';
-
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 
 
 class Profile extends StatefulWidget {
@@ -17,6 +19,7 @@ class _ProfileState extends State<Profile> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
         body: Container(
       width: double.infinity,
       decoration: BoxDecoration(
@@ -24,11 +27,8 @@ class _ProfileState extends State<Profile> {
           bottomRight: Radius.circular(45),
         ),
         gradient: LinearGradient(
-          colors: [colour1, colour2],
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-          //stops: [0.0,0.9],
-          tileMode: TileMode.clamp,
+            colors: [Color(0xFFE53033),Color(0xFFBC002D), ],
+            tileMode: TileMode.clamp
         ),
       ),
       child: SingleChildScrollView(
@@ -54,19 +54,19 @@ class _ProfileState extends State<Profile> {
                       padding: EdgeInsets.all(5.5),
                       child: CircleAvatar(
                         radius: 45.0,
-                        backgroundImage: NetworkImage('https://avatars0.githubusercontent.com/u/12520155?s=460&u=32bc2a0e2612f902e10f94f607639bc9caadae6b&v=4'),
+                        backgroundImage: AssetImage('images/profile.jpg'),
                       ),
                     ),
                     Text(
-                      'Samwise',
+                      'Sam Wilson',
                       style: TextStyle(
                           fontSize: 23,
                           color: Colors.white,
                           fontWeight: FontWeight.bold),
                     ),
                     Text(
-                      'RedLink ID',
-                      style: TextStyle(fontSize: 15, color: Colors.white),
+                      'REDLINK ID',
+                      style: TextStyle(fontSize: 15, color: Colors.white,letterSpacing: 4),
                     ),
                     SizedBox(
                       height: 20,
@@ -77,7 +77,7 @@ class _ProfileState extends State<Profile> {
             ),
             Container(
               decoration: BoxDecoration(
-                color: Color(0xFFF2F2F2),
+                color: Color(0xFfffffff),
                 borderRadius: BorderRadius.only(
                     topRight: Radius.circular(45),
                     topLeft: Radius.circular(45)),
@@ -90,11 +90,23 @@ class _ProfileState extends State<Profile> {
                         child: Padding(
                           padding: const EdgeInsets.only(
                               left: 25.0, right: 7.7, top: 20),
-                          child: ClayContainer(
+                          child: Container(
                             height: 80,
-                            depth: 19,
-                            spread: 8,
-                            borderRadius: 15,
+                            decoration: BoxDecoration(
+                                gradient: LinearGradient(
+                                    colors: [Color(0xFFffffff),Color(0xFFFfffff), ],
+                                    tileMode: TileMode.clamp
+                                ),
+                                borderRadius: BorderRadius.circular(15),
+                                color: Color.fromRGBO(49, 39, 79, 1),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Color(0x30bc002d),
+                                    blurRadius: 5,
+                                    offset: Offset(0, 10),
+                                  )
+                                ]
+                            ),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.stretch,
                               //mainAxisAlignment: MainAxisAlignment.center,
@@ -109,7 +121,7 @@ class _ProfileState extends State<Profile> {
                                     ),
                                     Icon(
                                       Icons.calendar_today,
-                                      color: Color(0xFF9055FF),
+                                      color: Color(0xFFBC002D),
                                     ),
                                     Text(
                                       '  Date of Birth',
@@ -135,11 +147,23 @@ class _ProfileState extends State<Profile> {
                         child: Padding(
                           padding: const EdgeInsets.only(
                               left: 7.7, right: 25, top: 20),
-                          child: ClayContainer(
+                          child: Container(
                             height: 80,
-                            depth: 19,
-                            spread: 8,
-                            borderRadius: 15,
+                            decoration: BoxDecoration(
+                                gradient: LinearGradient(
+                                    colors: [Color(0xFFffffff),Color(0xFFFfffff), ],
+                                    tileMode: TileMode.clamp
+                                ),
+                                borderRadius: BorderRadius.circular(15),
+                                color: Color.fromRGBO(49, 39, 79, 1),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Color(0x30bc002d),
+                                    blurRadius: 5,
+                                    offset: Offset(0, 10),
+                                  )
+                                ]
+                            ),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.stretch,
                               //mainAxisAlignment: MainAxisAlignment.center,
@@ -154,7 +178,7 @@ class _ProfileState extends State<Profile> {
                                     ),
                                     Icon(
                                       Icons.opacity,
-                                      color: Color(0xFF9055FF),
+                                      color: Color(0xFFBC002D),
                                     ),
                                     Text(
                                       '  Blood Type',
@@ -164,7 +188,7 @@ class _ProfileState extends State<Profile> {
                                 ),
                                 //SizedBox(height: 1,),
                                 Text(
-                                  '            A+',
+                                  '            O-',
                                   style: TextStyle(
                                     fontSize: 16.0,
                                     fontWeight: FontWeight.w900,
@@ -181,11 +205,23 @@ class _ProfileState extends State<Profile> {
                   Padding(
                     padding:
                         const EdgeInsets.only(left: 25.0, right: 25.0, top: 20),
-                    child: ClayContainer(
+                    child: Container(
                       height: 110,
-                      depth: 19,
-                      spread: 8,
-                      borderRadius: 15,
+                      decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                              colors: [Color(0xFFffffff),Color(0xFFFfffff), ],
+                              tileMode: TileMode.clamp
+                          ),
+                          borderRadius: BorderRadius.circular(15),
+                          color: Color.fromRGBO(49, 39, 79, 1),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Color(0x30bc002d),
+                              blurRadius: 5,
+                              offset: Offset(0, 10),
+                            )
+                          ]
+                      ),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
@@ -216,8 +252,8 @@ class _ProfileState extends State<Profile> {
                             data: SliderTheme.of(context).copyWith(
                               thumbShape: RoundSliderThumbShape(
                                   enabledThumbRadius: 9.0),
-                              activeTrackColor: Color(0xFF9055FF),
-                              thumbColor: Color(0xFF9055FF),
+                              activeTrackColor: Color(0xFFBC002D),
+                              thumbColor: Color(0xFFBC002D),
                               overlayColor: Color(0x222962F7),
                               inactiveTrackColor: Colors.grey,
                               overlayShape:
@@ -244,11 +280,23 @@ class _ProfileState extends State<Profile> {
                         child: Padding(
                           padding: const EdgeInsets.only(
                               left: 25.0, right: 7.7, top: 20),
-                          child: ClayContainer(
+                          child: Container(
                             height: 110,
-                            depth: 19,
-                            spread: 8,
-                            borderRadius: 15,
+                            decoration: BoxDecoration(
+                                gradient: LinearGradient(
+                                    colors: [Color(0xFFffffff),Color(0xFFFfffff), ],
+                                    tileMode: TileMode.clamp
+                                ),
+                                borderRadius: BorderRadius.circular(15),
+                                color: Color.fromRGBO(49, 39, 79, 1),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Color(0x30bc002d),
+                                    blurRadius: 5,
+                                    offset: Offset(0, 10),
+                                  )
+                                ]
+                            ),
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: <Widget>[
@@ -294,11 +342,23 @@ class _ProfileState extends State<Profile> {
                         child: Padding(
                           padding: const EdgeInsets.only(
                               left: 7.7, right: 25.0, top: 20),
-                          child: ClayContainer(
+                          child: Container(
                             height: 110,
-                            depth: 19,
-                            spread: 8,
-                            borderRadius: 15,
+                            decoration: BoxDecoration(
+                                gradient: LinearGradient(
+                                    colors: [Color(0xFFffffff),Color(0xFFFfffff), ],
+                                    tileMode: TileMode.clamp
+                                ),
+                                borderRadius: BorderRadius.circular(15),
+                                color: Color.fromRGBO(49, 39, 79, 1),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Color(0x30bc002d),
+                                    blurRadius: 5,
+                                    offset: Offset(0, 10),
+                                  )
+                                ]
+                            ),
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: <Widget>[
@@ -343,11 +403,23 @@ class _ProfileState extends State<Profile> {
                   Padding(
                     padding:
                         const EdgeInsets.only(left: 25.0, right: 25.0, top: 20),
-                    child: ClayContainer(
+                    child: Container(
                       height: 80,
-                      depth: 19,
-                      spread: 8,
-                      borderRadius: 15,
+                      decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                              colors: [Color(0xFFffffff),Color(0xFFFfffff), ],
+                              tileMode: TileMode.clamp
+                          ),
+                          borderRadius: BorderRadius.circular(15),
+                          color: Color.fromRGBO(49, 39, 79, 1),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Color(0x30bc002d),
+                              blurRadius: 5,
+                              offset: Offset(0, 10),
+                            )
+                          ]
+                      ),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         //mainAxisAlignment: MainAxisAlignment.center,
@@ -362,7 +434,7 @@ class _ProfileState extends State<Profile> {
                               ),
                               Icon(
                                 Icons.local_hospital,
-                                color: Color(0xFF9055FF),
+                                color: Color(0xFFBC002D),
                               ),
                               Text(
                                 '  Medical Condition',
@@ -386,11 +458,23 @@ class _ProfileState extends State<Profile> {
                   Padding(
                     padding: const EdgeInsets.only(
                         left: 25.0, right: 25.0, top: 20, bottom: 20),
-                    child: ClayContainer(
+                    child: Container(
                       height: 80,
-                      depth: 19,
-                      spread: 8,
-                      borderRadius: 15,
+                      decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                              colors: [Color(0xFFffffff),Color(0xFFFfffff), ],
+                              tileMode: TileMode.clamp
+                          ),
+                          borderRadius: BorderRadius.circular(15),
+                          color: Color.fromRGBO(49, 39, 79, 1),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Color(0x30bc002d),
+                              blurRadius: 5,
+                              offset: Offset(0, 10),
+                            )
+                          ]
+                      ),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         //mainAxisAlignment: MainAxisAlignment.center,
@@ -405,7 +489,7 @@ class _ProfileState extends State<Profile> {
                               ),
                               Icon(
                                 Icons.phone,
-                                color: Color(0xFF9055FF),
+                                color: Color(0xFFBC002D),
                               ),
                               Text(
                                 '  Contact',
@@ -433,6 +517,57 @@ class _ProfileState extends State<Profile> {
                       width: double.infinity,
                       child: Divider(
                         color: Colors.grey,
+                      ),
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: (){
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return CompatabilityPage();
+                          },
+                        ),
+                      );
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.only(left:25.0,right: 25.0,top: 20,bottom: 20),
+                      child: Container(
+                        height: 60,
+                        decoration: BoxDecoration(
+                            gradient: LinearGradient(
+                                colors: [Color(0xFFBC002D),Color(0xFFBC002D), ],
+                                tileMode: TileMode.clamp
+                            ),
+                            borderRadius: BorderRadius.circular(15),
+                            color: Color.fromRGBO(49, 39, 79, 1),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Color(0x30bc002d),
+                                blurRadius: 5,
+                                offset: Offset(0, 10),
+                              )
+                            ]
+                        ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.stretch,
+                          //mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            SizedBox(height: 20,),
+                            Center(
+                              child: Text(
+                                '  Who can I donate to?',
+                                style: TextStyle(fontSize: 17,fontFamily: 'nunito',fontWeight: FontWeight.bold,color: Colors.white.withOpacity(0.9)),
+
+                              ),
+                            ),
+
+                            //SizedBox(height: 1,),
+
+                          ],
+                        ),
+                        //curveType: CurveType.convex,
                       ),
                     ),
                   ),
@@ -464,7 +599,7 @@ class RoundIconButton extends StatelessWidget {
         width: 40.0,
         height: 40.0,
       ),
-      fillColor: Color(0xFF8364FB),
+      fillColor: Color(0xffE53033),
     );
   }
 }

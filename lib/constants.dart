@@ -15,7 +15,8 @@ const Color colour2=Colors.pink;
 const kLabelTextStyle=TextStyle(
   fontSize: 15.0,
   color: Colors.black,
-  //fontWeight: FontWeight.w900,
+  fontWeight: FontWeight.w500,
+  fontFamily: 'nunito'
 );
 
 const kNumberTextStyle=TextStyle(
