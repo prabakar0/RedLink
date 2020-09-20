@@ -45,8 +45,8 @@ class _PageGuideState extends State<PageGuide> {
       bottomNavigationBar: CurvedNavigationBar(
         index: pageIndex,
         backgroundColor: Colors.white,
-        color: Color(0xffE53033),
-        buttonBackgroundColor: Color(0xffE53033),
+        color: Color(0xffCB282D),
+        buttonBackgroundColor: Color(0xFFBC002D),
         height: 50,
         items: <Widget>[
           Icon(Icons.add, size: 22,color: Colors.white,),

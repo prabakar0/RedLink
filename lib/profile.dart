@@ -13,7 +13,7 @@ class Profile extends StatefulWidget {
 
 class _ProfileState extends State<Profile> {
   int height = 173;
-  int age = 21;
+  int age = 20;
   int weight = 58;
 
   @override
@@ -28,7 +28,10 @@ class _ProfileState extends State<Profile> {
         ),
         gradient: LinearGradient(
             colors: [Color(0xFFE53033),Color(0xFFBC002D), ],
-            tileMode: TileMode.clamp
+            tileMode: TileMode.mirror,
+            begin: Alignment.topRight,
+            end: Alignment.topLeft,
+
         ),
       ),
       child: SingleChildScrollView(

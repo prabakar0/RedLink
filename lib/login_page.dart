@@ -38,24 +38,24 @@ class _LoginPageState extends State<LoginPage> {
                     )),
                   ),
                   Positioned(
-                    top: 150,
+                    top: 140,
                     left: 100,
                     height: 238,
                     width: 238,
-                    child:FadeAnimation(1.15, Text("Welcome Back!", style: TextStyle(color: Colors.white.withOpacity(0.9), fontWeight: FontWeight.bold, fontSize: 30),)),
+                    child:FadeAnimation(1.15, Text("Welcome Back!", style: TextStyle(color: Colors.white.withOpacity(0.9),fontFamily: 'nunito', fontWeight: FontWeight.bold, fontSize: 30),)),
                   ),
                   Positioned(
-                    top: 200,
-                    left: 90,
-                    height: 238,
-                    width: 238,
+                    top: 190,
+                    left: 57,
+                    height: 270,
+                    width: 300,
                     child: FadeAnimation(1.2, Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Container(
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.only(bottomLeft: Radius.circular(50) ,bottomRight: Radius.circular(50)),
                             image: DecorationImage(
-                                image: AssetImage('images/image1.png'),
+                                image: AssetImage('images/Group 5.png'),
                                 fit: BoxFit.fill
                             )
                         ),
@@ -65,7 +65,7 @@ class _LoginPageState extends State<LoginPage> {
                 ],
               ),
             ),
-            //SizedBox(height: 25,),
+            SizedBox(height: 15,),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 40),
               child: Column(
@@ -152,7 +152,7 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                     )),
                   ),
-                  SizedBox(height: 20,),
+                  SizedBox(height: 25,),
                   GestureDetector(
                       onTap: (){
 
@@ -166,7 +166,7 @@ class _LoginPageState extends State<LoginPage> {
                         );
 
                       },
-                      child: FadeAnimation(1.7, Center(child: Text("Dont have an account? Sign up", style: TextStyle(fontSize:15,color: Colors.black),)))),
+                      child: FadeAnimation(1.7, Center(child: Text("Don't have an account? Sign up", style: TextStyle(fontSize:15,color: Colors.black),)))),
                 ],
               ),
             )

@@ -9,9 +9,80 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+
+  void _showcontent() {
+    showDialog(
+      context: context, barrierDismissible: false, // user must tap button!
+
+      builder: (BuildContext context) {
+        return new AlertDialog(
+          title: new Text('Confirm Booking'),
+          content: new SingleChildScrollView(
+            child: new ListBody(
+              children: [
+                Text('Hospital Name : Apollo (Mogappair)',style: TextStyle(fontFamily: 'nunito'),),
+                Text('Units Required : 3',style: TextStyle(fontFamily: 'nunito'),),
+                Text('Deadline : 1:00pm, 20th September ',style: TextStyle(fontFamily: 'nunito'),),
+                Text('Contact Number : 9001230019',style: TextStyle(fontFamily: 'nunito'),),
+              ],
+            ),
+          ),
+          actions: [
+            new FlatButton(
+              child: new Text('confirm',style:TextStyle(color: Colors.red) ,),
+              onPressed: () {
+                setState(() {
+                  Navigator.of(context).pop();
+                  f=1;
+                });
+
+              },
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  int count1=15;
+  int count2=3;
   int _value = 8;
   String type;
+  int f=0;
   @override
+  int getNumber(int count){
+    if(f==1)
+      return count--;
+    else
+      return count;
+  }
+  Color getColor(){
+    if(f==1)
+     return Color(0xffCB282D);
+    else
+      return Colors.white.withOpacity(0.9);
+  }
+  Color getColor1(){
+    if(f==1)
+      return Colors.white.withOpacity(0.9);
+    else
+      return Color(0xFFBC002D);
+  }
+  Color getColor2(){
+    if(f==1)
+      return Colors.white.withOpacity(0.9);
+    else
+      return Colors.black;
+  }
+
+  String getText(){
+    if(f==1)
+      return "Confirmed";
+    else
+      return "Urgent";
+  }
+
+
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xffffffff),
@@ -74,7 +145,7 @@ class _HomePageState extends State<HomePage> {
                      children: <Widget>[
                        Padding(
                          padding: const EdgeInsets.only(top:30.0,right: 17,left: 25),
-                         child: Text('15',style: TextStyle(fontSize: 70,color: Colors.white.withOpacity(0.8),fontFamily: 'Montserrat'),),
+                         child: Text(getNumber(count1).toString(),style: TextStyle(fontSize: 70,color: Colors.white.withOpacity(0.8),fontFamily: 'Montserrat'),),
                        ),
                        Text('   Requests',style: TextStyle(fontSize: 20,color: Colors.white.withOpacity(0.8)),)
                      ],
@@ -291,6 +362,10 @@ class _HomePageState extends State<HomePage> {
                  SizedBox(height: 20,),
                  GestureDetector(
                    onTap: (){
+                     setState(() {
+                       _showcontent();
+
+                     });
 
 
                    },
@@ -299,7 +374,7 @@ class _HomePageState extends State<HomePage> {
                      width: double.infinity,
                      decoration: BoxDecoration(
                          gradient: LinearGradient(
-                             colors: [Color(0xFFffffff),Color(0xFFFfffff), ],
+                             colors: [getColor(),getColor(), ],
                              tileMode: TileMode.clamp
                          ),
                          borderRadius: BorderRadius.circular(15),
@@ -318,21 +393,24 @@ class _HomePageState extends State<HomePage> {
                            children: <Widget>[
                              Padding(
                                padding: const EdgeInsets.only(top:30.0,right: 10,left: 25),
-                               child: Text('O-',style: TextStyle(fontSize: 22,color: Color(0xFFBC002D),fontWeight:FontWeight.bold,fontFamily: 'nunito'),),
+                               child: Text('O-',style: TextStyle(fontSize: 22,color: getColor1(),fontWeight:FontWeight.bold,fontFamily: 'nunito'),),
                              ),
-                             Text('   Urgent',style: TextStyle(fontSize: 15,color: Colors.black,fontFamily: 'nunito'),),
+                             Padding(
+                               padding: const EdgeInsets.only(left: 5),
+                               child: Text(getText(),style: TextStyle(fontSize: 15 ,color: getColor2(),fontFamily: 'nunito'),),
+                             ),
                            ],
                          ),
-                         SizedBox(height: 35, child: VerticalDivider(color: Colors.black,thickness: 1,)),
+                         SizedBox(height: 35, child: VerticalDivider(color: getColor2(),thickness: 1,)),
                          SizedBox(width: 5,),
                          Column(
                            crossAxisAlignment: CrossAxisAlignment.start,
                            children: <Widget>[
                              SizedBox(height: 15,),
-                             Text('Hospital Name : Apollo Clinic(Mogappair)',style: TextStyle(fontFamily: 'nunito'),),
-                             Text('Units Required : 3',style: TextStyle(fontFamily: 'nunito'),),
-                             Text('Deadline : 1:00pm, 20th September ',style: TextStyle(fontFamily: 'nunito'),),
-                             Text('Contact Number : 9001230019',style: TextStyle(fontFamily: 'nunito'),),
+                             Text('Hospital Name : Apollo (Mogappair)',style: TextStyle(fontFamily: 'nunito',color: getColor2()),),
+                             Text('Units Required : 3',style: TextStyle(fontFamily: 'nunito',color: getColor2()),),
+                             Text('Deadline : 1:00pm, 20th September ',style: TextStyle(fontFamily: 'nunito',color: getColor2()),),
+                             Text('Contact Number : 9001230019',style: TextStyle(fontFamily: 'nunito',color: getColor2()),),
                            ],
                          ),
                        ],

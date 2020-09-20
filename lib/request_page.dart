@@ -8,6 +8,46 @@ class RequestPage extends StatefulWidget {
 }
 
 class _RequestPageState extends State<RequestPage> {
+
+  void _showcontent() {
+    showDialog(
+      context: context, barrierDismissible: false, // user must tap button!
+
+      builder: (BuildContext context) {
+        return new AlertDialog(
+          title: new Text('Request Confirmed'),
+          content: new SingleChildScrollView(
+            child: new ListBody(
+              children: [
+                Text('Hospital Name : Apollo (Mogappair)',style: TextStyle(fontFamily: 'nunito'),),
+                Text('Units Required : 3',style: TextStyle(fontFamily: 'nunito'),),
+                Text('Deadline : 1:00pm, 20th September ',style: TextStyle(fontFamily: 'nunito'),),
+                Text('Contact Number : 9001230019',style: TextStyle(fontFamily: 'nunito'),),
+              ],
+            ),
+          ),
+          actions: [
+            new FlatButton(
+
+              child: new Text('Okay',style:TextStyle(color: Colors.red) ,),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return PageGuide();
+                    },
+                  ),
+                );
+              },
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+
   final HomePage _listHomePage=HomePage();
 
   String _patientname;
@@ -142,14 +182,16 @@ class _RequestPageState extends State<RequestPage> {
         flexibleSpace: Container(
           decoration: BoxDecoration(
               gradient: LinearGradient(
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
+                  tileMode: TileMode.mirror,
+                  begin: Alignment.topRight,
+                  end: Alignment.topLeft,
+
                   colors: <Color>[
                     Color(0xFFE53033),Color(0xFFBC002D),
                   ])
           ),
         ),
-        title: Text("Request for Blood",style: TextStyle(fontFamily: 'nunito'),),
+        title: Text("Find a Donor",style: TextStyle(fontFamily: 'nunito'),),
       ),
       body: SingleChildScrollView(
         child: Container(
@@ -169,16 +211,10 @@ class _RequestPageState extends State<RequestPage> {
                 _buildnumber(),
                 SizedBox(height: 10,),
                 RaisedButton(
-                  child: Text("Request",style: TextStyle(color: Colors.red,fontSize: 16),),
+                  color: Color(0xFFBC002D),
+                  child: Text("Request",style: TextStyle(color: Colors.white.withOpacity(0.9),fontSize: 16),),
                   onPressed: (){
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) {
-                          return PageGuide();
-                        },
-                      ),
-                    );
+                    _showcontent();
                   },
                 )
               ],
