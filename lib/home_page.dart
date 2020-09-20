@@ -20,7 +20,7 @@ class _HomePageState extends State<HomePage> {
           content: new SingleChildScrollView(
             child: new ListBody(
               children: [
-                Text('Hospital Name : Apollo (Mogappair)',style: TextStyle(fontFamily: 'nunito'),),
+                Text('Hospital Name : Apollo(Anna Nagar)',style: TextStyle(fontFamily: 'nunito'),),
                 Text('Units Required : 3',style: TextStyle(fontFamily: 'nunito'),),
                 Text('Deadline : 1:00pm, 20th September ',style: TextStyle(fontFamily: 'nunito'),),
                 Text('Contact Number : 9001230019',style: TextStyle(fontFamily: 'nunito'),),
@@ -407,7 +407,7 @@ class _HomePageState extends State<HomePage> {
                            crossAxisAlignment: CrossAxisAlignment.start,
                            children: <Widget>[
                              SizedBox(height: 15,),
-                             Text('Hospital Name : Apollo (Mogappair)',style: TextStyle(fontFamily: 'nunito',color: getColor2()),),
+                             Text('Hospital Name : Apollo(Anna Nagar)',style: TextStyle(fontFamily: 'nunito',color: getColor2()),),
                              Text('Units Required : 3',style: TextStyle(fontFamily: 'nunito',color: getColor2()),),
                              Text('Deadline : 1:00pm, 20th September ',style: TextStyle(fontFamily: 'nunito',color: getColor2()),),
                              Text('Contact Number : 9001230019',style: TextStyle(fontFamily: 'nunito',color: getColor2()),),
